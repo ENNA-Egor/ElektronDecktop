@@ -11,10 +11,13 @@ const createWindow = () => {
   })
 
   win.loadFile('src/index.html')
+
+  // Добавьте эту строку для автоматического открытия Developer Tools
+  // win.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
-   ipcMain.handle('ping', () => 'pong')
+   ipcMain.handle('ping', () => 'Hello Elektron')
   createWindow()
 
   app.on('activate', () => {
